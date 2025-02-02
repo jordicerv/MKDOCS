@@ -1,0 +1,61 @@
+site_name: Implantació de sistemes operatius
+theme:
+  features:
+    - navigation.top
+    - header.autohide
+    - announce.dismiss
+    - code.copy
+    - toc.integrate
+    - instant.click
+    - navigation.tabs
+  name: material
+  custom_dir: docs/overrides
+  palette:
+    primary: "light green"
+    accent: "light blue"
+    background: "white"
+
+copyright: mkdocs-sistemes© 2024 by Jordi Cervera is licensed under CC BY 4.0 
+
+extra:
+  social:
+    - icon: fontawesome/brands/creative-commons 
+      link: https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1
+  generator: false
+
+nav:
+  - Índex: "index.md"
+  - Sprint1:
+    - ubuntu.md
+    - natprofile.md 
+    - llicenciament.md
+    - configxarxa.md
+    - ubuntu2.md
+    - timeshift.md
+    - guia_gestio_paquets.md
+    - opening_packet.md
+  - Sprint2:
+    - gestio_procesos.md
+    - gestio_usuaris_grups_permisos.md
+    - sistemes_fitxers.md
+    - particions.md
+    - copies_seguretat_automatització.md
+    - automatitzacio_cron_anacron.md
+  - Sprint3:
+    - init_domini_ldap.md
+    - client.md
+    - gestio_domini_ldap.md
+
+markdown_extensions: 
+  - def_list
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+
+
+
+
+
+
