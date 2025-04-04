@@ -1,0 +1,1454 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../gestio_procesos/">
+      
+      
+        <link rel="next" href="../sistemes_fitxers/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>Gestio d'Usuaris,Grups i Permisos - Implantació de sistemes operatius</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f615399.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.649f08f9.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="light-blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gestio-dusuarisgrups-i-permisos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Implantació de sistemes operatius" class="md-header__button md-logo" aria-label="Implantació de sistemes operatius" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Implantació de sistemes operatius
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gestio d'Usuaris,Grups i Permisos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Índex
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ubuntu/" class="md-tabs__link">
+          
+  
+  Projecte1
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../windows/" class="md-tabs__link">
+          
+  
+  Projecte2
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Implantació de sistemes operatius" class="md-nav__button md-logo" aria-label="Implantació de sistemes operatius" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Implantació de sistemes operatius
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Índex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projecte1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Projecte1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ubuntu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu 24.04 instal·lació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../natprofile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Perfil NAT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../llicenciament/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicencies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configxarxa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuració De Xarxa (Netplan)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ubuntu2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu Recuperacio del Grub2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../timeshift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació TimeShift
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guia_gestio_paquets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guia de Gestió de Paquets i Repositoris
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opening_packet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Afegir repositoris manualment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gestio_procesos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestio Processos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Gestio d'Usuaris,Grups i Permisos
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Gestio d'Usuaris,Grups i Permisos
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dins-de-la-gestio-dusuaris-tenim-4-fitxer-molt-importants" class="md-nav__link">
+    Dins de la gestió d'usuaris tenim 4 fitxer molt importants
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gnome-system-tools" class="md-nav__link">
+    Gnome System Tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestio-dusuaris" class="md-nav__link">
+    Gestio d'Usuaris
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestio d'Usuaris">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacio-dusuaris-amb-ubuntu" class="md-nav__link">
+    Creacio d'Usuaris amb Ubuntu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificar-un-usuari" class="md-nav__link">
+    Modificar un usuari
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestio-de-grups" class="md-nav__link">
+    Gestió de grups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprovacio-dusuaris-i-grups" class="md-nav__link">
+    Comprovació d'usuaris i grups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestio-de-permisos" class="md-nav__link">
+    Gestió de permisos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemes_fitxers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sistemes de fitxers i particions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creació, formateig, muntatge i compartició de particions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../copies_seguretat_automatitzaci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipus de còpies de seguretat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automatitzacio_cron_anacron/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automatització de tasques amb cron i anacron
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../init_domini_ldap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació i preparació d'un domini ldap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unió de Clients al Domini LDAP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gestio_domini_ldap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestió de Directori LDAP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../perfils_mobils_compartir_recursos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Comparació entre Samba i NFS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../samba/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Samba
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ldap_entorngrafic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eines Gràfiques per Gestionar LDAP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint4
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../raids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raids
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint5
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitoratge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Registre i Monitoratge de Sistemes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../servidors_dactualitzacions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Servidor d'Actualitzacions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../auditoria_segu_linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auditoria de Seguretat en Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projecte2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Projecte2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalació de les maquines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="gestio-dusuarisgrups-i-permisos">Gestio d'Usuaris,Grups i Permisos</h1>
+<p><strong>Que es la PS o pseudoterminal?</strong></p>
+<pre><code> És una interfície especial en sistemes Unix/Linux que simula el comportament d'un terminal físic per permetre que aplicacions de línia de comandes interactuïn entre elles, com si estiguessin connectades a un terminal real. Aquesta consta de dues parts el Master i el Slave. El master controla el terminal virtual, les aplicacions de control (com ssh, screen o tmux) es connecten al costat master per gestionar les dades. El slave és el costat que veu l'aplicació de l'usuari (com bash o vim), actuant com si fos un terminal real.
+</code></pre>
+<p><em>Diferencies entre terminal i pseudoterminal:</em></p>
+<ol>
+<li>
+<p><strong>Dispositiu físic vs emulació</strong>: Els terminals solen ser dispositius físics o interfícies directes d'interacció, mentre que les pseudoterminals emulen un terminal per permetre connexions remotes o la multiplexació de sessions.</p>
+</li>
+<li>
+<p><strong>Interacció entre processos</strong>: Les pseudoterminals creen una parella de dispositius (mestre i esclau) que permet que dos processos (com el client i el servidor SSH) interactuïn, actuant el procés mestre com el terminal i el procés esclau com el programa interactiu. En un terminal físic, aquesta separació no existeix.</p>
+</li>
+</ol>
+<h3 id="dins-de-la-gestio-dusuaris-tenim-4-fitxer-molt-importants">Dins de la gestió d'usuaris tenim 4 fitxer molt importants</h3>
+<p><strong>Passwd:</strong></p>
+<pre><code>El fitxer /etc/passwd és un fitxer del sistema Linux que conté informació bàsica sobre els usuaris registrats al sistema. Cada línia representa un usuari, i els camps estan separats per dos punts (:). Aquest fitxer està accessible per a tots els usuaris, però les contrasenyes no hi són visibles, ja que estan emmagatzemades en format xifrat al fitxer /etc/shadow.
+</code></pre>
+<p><em>Descripció dels camps:</em></p>
+<ol>
+<li><strong>nom_usuari:</strong> Nom de l'usuari o identificador amb el qual inicia la sessió.</li>
+<li><strong>x:</strong> Representa la contrasenya de l'usuari, que es troba en realitat a <code>/etc/shadow</code> per seguretat.</li>
+<li><strong>UID (User ID):</strong> Identificador únic de l'usuari. Els usuaris del sistema solen tenir UID baixos (per exemple, 0 per a root).</li>
+<li><strong>GID (Group ID):</strong> Identificador del grup principal de l'usuari, que es defineix a /etc/group.</li>
+<li><strong>descripció:</strong> Camp opcional que proporciona informació addicional sobre l'usuari (per exemple, el nom complet).</li>
+<li><strong>directori_inici:</strong> Ruta al directori personal de l'usuari.</li>
+<li><strong>shell:</strong> La shell per defecte que s'executarà quan l'usuari iniciï sessió (per exemple, /bin/bash).</li>
+</ol>
+<p><em>Exemple visual del fitxer:</em>
+<img alt="alt text" src="../fotos/sprint2/passwd.png" /></p>
+<p><strong>Group:</strong></p>
+<pre><code>El fitxer /etc/group en sistemes Linux conté informació sobre els grups definits al sistema. Cada línia representa un grup i els camps estan separats per dos punts (:), similar al fitxer /etc/passwd. Aquest fitxer és essencial per a la gestió d'usuaris, ja que defineix quins usuaris pertanyen a cada grup.
+</code></pre>
+<p><em>Descripció dels camps:</em></p>
+<ol>
+<li><strong>nom_grup:</strong> Nom del grup.</li>
+<li><strong>x:</strong> Indica que la contrasenya del grup (si n'hi ha) es troba encriptada al fitxer <code>/etc/gshadow</code>.</li>
+<li><strong>GID (Group ID):</strong> Identificador únic del grup.</li>
+<li><strong>usuaris:</strong> Llista d'usuaris que són membres addicionals d'aquest grup, separats per comes. Els membres principals del grup (aquells per als quals és el seu grup per defecte) no apareixen en aquest camp.</li>
+</ol>
+<p><em>Exemple visual del fitxer:</em>
+<img alt="alt text" src="../fotos/sprint2/group.png" /></p>
+<p><strong>Shadow:</strong></p>
+<pre><code>El fitxer /etc/shadow és un fitxer de sistema en Linux que emmagatzema les contrasenyes dels usuaris de manera xifrada i segura. Només els usuaris amb privilegis d’administrador poden accedir-hi directament, i és complementari a /etc/passwd, on es defineixen els usuaris.
+</code></pre>
+<p><em>Descripció dels camps:</em></p>
+<ol>
+<li><strong>nom_usuari:</strong> El nom d'usuari, que coincideix amb el del fitxer <code>/etc/passwd</code>.</li>
+<li><strong>contrasenya:</strong> La contrasenya xifrada de l'usuari. Si el camp conté un asterisc <code>*</code> o una exclamació <code>!</code>, l’usuari no pot iniciar sessió amb aquesta contrasenya.</li>
+<li><strong>dia_últim_canvi:</strong> Nombre de dies des de l’1 de gener de 1970 (època Unix) en què es va canviar la contrasenya per última vegada.</li>
+<li><strong>dies_min:</strong> Nombre mínim de dies que han de passar abans que l’usuari pugui canviar la contrasenya.</li>
+<li><strong>dies_max:</strong> Nombre màxim de dies durant els quals la contrasenya és vàlida.</li>
+<li><strong>dies_avís:</strong> Nombre de dies abans que caduqui la contrasenya en què es notificarà a l'usuari.</li>
+<li><strong>dies_expira:</strong> Nombre de dies després del qual la contrasenya caduca i l'usuari ha de canviar-la.</li>
+<li><strong>dies_inactius:</strong> Nombre de dies d'inactivitat després de la caducitat de la contrasenya abans que el compte sigui desactivat.</li>
+<li><strong>data_eliminació:</strong> Data en què el compte es desactiva, en format de dies des de l'època Unix (opcional).</li>
+</ol>
+<p><em>Exemple visual del fitxer:</em>
+<img alt="alt text" src="../fotos/sprint2/shadow.png" /></p>
+<p><strong>Gshadow:</strong></p>
+<pre><code>El fitxer /etc/gshadow en sistemes Linux emmagatzema informació sensible sobre els grups del sistema, incloent-hi les contrasenyes dels grups (si n'hi ha) i els permisos d'administració de grup. Aquest fitxer complementa /etc/group i només pot ser accedit per usuaris amb privilegis d'administrador.
+</code></pre>
+<p><em>Descripció dels camps:</em></p>
+<ol>
+<li><strong>nom_grup:</strong> Nom del grup, el mateix que es troba a <code>/etc/group</code>.</li>
+<li><strong>contrasenya:</strong> Contrasenya xifrada del grup. Si aquest camp conté <code>!</code>, indica que el grup no té contrasenya, i si conté un asterisc <code>*</code>, el grup està bloquejat.</li>
+<li><strong>administradors:</strong> Llista d'usuaris amb privilegis d'administració sobre el grup, separats per comes. Aquests usuaris poden afegir o eliminar membres del grup.</li>
+<li><strong>membres:</strong> Llista d'usuaris que són membres addicionals del grup, també separats per comes.</li>
+</ol>
+<p><img alt="alt text" src="../fotos/sprint2/gshadow.png" /></p>
+<h3 id="gnome-system-tools">Gnome System Tools</h3>
+<p>Si no tens GNOME System Tools instal·lat, pots instal·lar-lo des de la terminal amb el següent comandament:</p>
+<pre><code>sudo apt install gnome-system-tools
+</code></pre>
+<p><em>Amb genome podem utilitzar les accions mes comunes amb Usuaris i grups amb la ventatja de tenir una interficie grafica: Afegir, eliminar, modificar...Tant usuaris com grups</em></p>
+<h2 id="gestio-dusuaris">Gestio d'Usuaris</h2>
+<h3 id="creacio-dusuaris-amb-ubuntu">Creacio d'Usuaris amb Ubuntu</h3>
+<p>Per a crear un nou usuari, s'utilitza la comanda "useradd seguida del nom d'usuari"</p>
+<pre><code>Sudo useradd nom_usuari
+</code></pre>
+<p><em>Aquesta comanda crea l'usuari, però no li assigna una contrasenya ni una carpeta d'inici. Per assignar una contrasenya:</em></p>
+<pre><code>Sudo passwd nom_usuari
+</code></pre>
+<h3 id="modificar-un-usuari">Modificar un usuari</h3>
+<p>Per a modificar un usuari, es pot fer servir la comanda usermod.
+Algunes opcions són:</p>
+<p><strong>·Afegir l'usuari:</strong></p>
+<pre><code>Sudo usermod -aG grup nom_usuari
+</code></pre>
+<p><em>Aquesta comanda afegeix l'usuari al grup especificat sense eliminar-lo d'altres grups als quals pugui pertànyer.</em></p>
+<p><strong>·Canviar la carpeta d'inici d'un usuari:</strong></p>
+<pre><code>Sudo usermod -d /nou/directori nom_usuari
+</code></pre>
+<p><strong>·Canviar el nom d'usuari:</strong></p>
+<pre><code>Sudo usermod -l nou_nom_usuari antic_nom_usuari
+</code></pre>
+<p><strong>·Canviar la contrasenya d'un usuari:</strong></p>
+<pre><code>Sudo passwd nom_usuari
+</code></pre>
+<p><strong>·Eliminar un usuari:</strong></p>
+<p><em>Per a eliminar un usuari, utilitzem la comanda userdel. Si també volem eliminar la seva corpeta d'inici i altres fitxers associats, afegim l'opció <code>-r</code>.</em></p>
+<pre><code>Sudo userdel -r rom_usuari
+</code></pre>
+<p>Tambe es pot desactivar un compte sense necessitat de eliminarlo, amb el parametre -L de passwd:</p>
+<pre><code>sudo passwd -L nom_usuari
+</code></pre>
+<p>Per a tornar a activar un compte utilitzem el parametre <code>-U</code>:</p>
+<pre><code>sudo passwd -u nom_usuari
+</code></pre>
+<h2 id="gestio-de-grups">Gestió de grups</h2>
+<p>Els grups són utilitzarts per a grupar usuaris i facilitar la gestió de permisos.</p>
+<p><strong>·Crear un grup:</strong></p>
+<pre><code>Sudo groupadd nom_grup
+</code></pre>
+<p><strong>·Afegir un usuari a un grup:</strong></p>
+<pre><code>sudo usermod -aG nom_grup nom_usuari
+</code></pre>
+<p><strong>·Eliminar un grup:</strong></p>
+<pre><code>sudo groupdel nom_grup
+</code></pre>
+<h2 id="comprovacio-dusuaris-i-grups">Comprovació d'usuaris i grups</h2>
+<p>Per veure informació sobre un usuari o grup, es poden utilitzar les següents comandes:</p>
+<p><strong>·Veure informació d'un usuari:</strong></p>
+<pre><code>id nom_usuari
+</code></pre>
+<p><strong>·Veure la llista d'usuaris del sistema:</strong></p>
+<pre><code>cat /etc/passwd
+</code></pre>
+<p><strong>·Veure els grups d'un usuari:</strong>
+    groups nom_usuari</p>
+<h2 id="gestio-de-permisos">Gestió de permisos</h2>
+<p>Els permisos d'accés als arxius i directoris es gestionen mitjançant les comandes: chmod, chown i chgrp.</p>
+<p><em>Exemple visual de la gestió de permisos:</em>
+<img alt="alt text" src="../fotos/sprint2/taulachmod.png" /></p>
+<p><strong>·Canviar els permisos d'un arxiu o directori(chmod):</strong>
+Els permisos es poden expressar en forma numèrica <code>(r=4, w=2, x=1)</code> o simbòlica.</p>
+<p>Per exemple, per donar permisos de lectura, escriptura i execució al propietari, i només de lectura i execució als altres:</p>
+<pre><code>Sudo chmod 755 fitxer
+</code></pre>
+<p>O bé de forma simbòlica:</p>
+<pre><code>Sudo chmod u=rwx, go=rx fitxer
+</code></pre>
+<p><strong>·Caviar el propietari d'un arxiu o directori(chown):</strong></p>
+<pre><code>Sudo chown nou_propietari fitxer
+</code></pre>
+<p>Per canviar tant el propietari com el grup:</p>
+<pre><code>Sudo choen nou_propietari:nou:grup fitxer
+</code></pre>
+<p><strong>·Canviar el grup d'un arxiu o directori(chgrp):</strong></p>
+<pre><code>Sudo chgrp nou_grup fitxer
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+            <div class="md-footer-image">
+                <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="noopener" title="Creative Commons">
+                    <img src="../../fotos/CC.png" alt="Footer Image" style="max-width: 80px; height: auto;">
+                </a>
+            </div>
+            <div class="md-copyright">
+                <div class="md-copyright__highlight">
+                    mkdocs-sistemes © 2024 by Jordi Cervera is licensed under CC BY 4.0
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "header.autohide", "announce.dismiss", "code.copy", "toc.integrate", "instant.click", "navigation.tabs"], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>

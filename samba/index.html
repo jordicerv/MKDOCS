@@ -1,0 +1,1484 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../perfils_mobils_compartir_recursos/">
+      
+      
+        <link rel="next" href="../ldap_entorngrafic/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>Samba - Implantació de sistemes operatius</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f615399.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.649f08f9.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="light-blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#comparticio-de-recursos-amb-samba" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Implantació de sistemes operatius" class="md-header__button md-logo" aria-label="Implantació de sistemes operatius" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Implantació de sistemes operatius
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Samba
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Índex
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ubuntu/" class="md-tabs__link">
+          
+  
+  Projecte1
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../windows/" class="md-tabs__link">
+          
+  
+  Projecte2
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Implantació de sistemes operatius" class="md-nav__button md-logo" aria-label="Implantació de sistemes operatius" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Implantació de sistemes operatius
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Índex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projecte1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Projecte1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ubuntu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu 24.04 instal·lació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../natprofile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Perfil NAT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../llicenciament/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicencies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configxarxa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuració De Xarxa (Netplan)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ubuntu2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu Recuperacio del Grub2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../timeshift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació TimeShift
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guia_gestio_paquets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guia de Gestió de Paquets i Repositoris
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opening_packet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Afegir repositoris manualment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gestio_procesos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestio Processos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gestio_usuaris_grups_permisos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestio d'Usuaris,Grups i Permisos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemes_fitxers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sistemes de fitxers i particions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creació, formateig, muntatge i compartició de particions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../copies_seguretat_automatitzaci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipus de còpies de seguretat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automatitzacio_cron_anacron/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automatització de tasques amb cron i anacron
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../init_domini_ldap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació i preparació d'un domini ldap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unió de Clients al Domini LDAP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gestio_domini_ldap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestió de Directori LDAP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../perfils_mobils_compartir_recursos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Comparació entre Samba i NFS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Samba
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Samba
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comparticio-de-recursos-amb-samba" class="md-nav__link">
+    Compartició de recursos amb Samba
+  </a>
+  
+    <nav class="md-nav" aria-label="Compartició de recursos amb Samba">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio-i-configuracio-de-samba" class="md-nav__link">
+    Instal·lació i configuració de Samba
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diferencies-clau-respecte-a-nfs" class="md-nav__link">
+    Diferències clau respecte a NFS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integracio-amb-ldap" class="md-nav__link">
+    Integració amb LDAP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compatibilitat" class="md-nav__link">
+    Compatibilitat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installacio-i-proves" class="md-nav__link">
+    Instal·lació i proves
+  </a>
+  
+    <nav class="md-nav" aria-label="Instal·lació i proves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servidor-samba" class="md-nav__link">
+    Servidor Samba
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracio-de-smbconf" class="md-nav__link">
+    Configuració de smb.conf
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gesto-dusuaris-i-permisos" class="md-nav__link">
+    Gestó d'usuaris i permisos
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestó d'usuaris i permisos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacio-dusuaris-i-grups" class="md-nav__link">
+    Creació d'usuaris i grups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assignacio-de-contrasenya-per-a-samba" class="md-nav__link">
+    Assignació de contrasenya per a Samba
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracio-del-client-samba" class="md-nav__link">
+    Configuració del client Samba
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuració del client Samba">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio-del-client" class="md-nav__link">
+    Instal·lació del client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connexio-com-a-usuari-anonim" class="md-nav__link">
+    Connexió com a usuari anònim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connexio-amb-usuaris-amb-permisos" class="md-nav__link">
+    Connexió amb usuaris amb permisos
+  </a>
+  
+    <nav class="md-nav" aria-label="Connexió amb usuaris amb permisos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usuari-jesus" class="md-nav__link">
+    Usuari Jesus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usuari-diego" class="md-nav__link">
+    Usuari Diego
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usuari-joan" class="md-nav__link">
+    Usuari Joan
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integracio-amb-ldap_1" class="md-nav__link">
+    Integració amb LDAP
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ldap_entorngrafic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eines Gràfiques per Gestionar LDAP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint4
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../raids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raids
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint5
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitoratge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Registre i Monitoratge de Sistemes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../servidors_dactualitzacions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Servidor d'Actualitzacions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../auditoria_segu_linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auditoria de Seguretat en Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projecte2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Projecte2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalació de les maquines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Samba</h1>
+
+<h2 id="comparticio-de-recursos-amb-samba">Compartició de recursos amb Samba</h2>
+<h3 id="installacio-i-configuracio-de-samba">Instal·lació i configuració de Samba</h3>
+<p>Samba és un servei que permet compartir carpetes i altres recursos com impressores dins una xarxa. Tot i que comparteix algunes similituds amb NFS, Samba destaca per la seva gestió d'autenticació basada en usuaris.</p>
+<h3 id="diferencies-clau-respecte-a-nfs">Diferències clau respecte a NFS</h3>
+<p>Una de les principals diferències entre Samba i NFS és la manera com gestionen l'autenticació: mentre que NFS la realitza a nivell de màquina, Samba la gestiona a nivell d'usuari, oferint un control més granular sobre els accessos.</p>
+<h3 id="integracio-amb-ldap">Integració amb LDAP</h3>
+<p>Encara que no és imprescindible, Samba pot integrar-se amb LDAP per centralitzar la gestió d'usuaris i permisos.</p>
+<h3 id="compatibilitat">Compatibilitat</h3>
+<p>Samba funciona tant en sistemes Linux com en Windows, permetent compartir recursos entre diferents plataformes de manera eficient.</p>
+<hr />
+<h2 id="installacio-i-proves">Instal·lació i proves</h2>
+<h3 id="servidor-samba">Servidor Samba</h3>
+<p>Per instal·lar Samba, executem la comanda:</p>
+<pre><code class="language-bash">sudo apt install samba
+</code></pre>
+<p><img alt="alter text" src="../fotos/sprint3/samba/comp1.png" /></p>
+<p>A continuació, creem una carpeta compartida i li assignem els permisos necessaris. En aquest cas, l'assignarem a <code>nobody:nogroup</code> amb permisos 777 per simplificar la configuració.</p>
+<p><img alt="alter text" src="../fotos/sprint3/samba/comp2.png" /></p>
+<p>Un cop creat el directori, comprovem que els permisos s'han aplicat correctament.</p>
+<p><img alt="alter text" src="../fotos/sprint3/samba/comp3.png" /></p>
+<h3 id="configuracio-de-smbconf">Configuració de <code>smb.conf</code></h3>
+<p>Per definir el recurs compartit, editem el fitxer <code>/etc/samba/smb.conf</code> i afegim la configuració necessària.</p>
+<p><img alt="alter text" src="../fotos/sprint3/samba/comp4.png" /></p>
+<ul>
+<li>Es defineix el directori compartit.</li>
+<li>S'especifica si l'accés anònim és permès.</li>
+<li>S'estableixen les màscares per a fitxers i directoris.</li>
+<li>Es configuren permisos d'accés per usuaris i grups.</li>
+</ul>
+<p>Un cop editat el fitxer, reiniciem el servei per aplicar els canvis:</p>
+<pre><code class="language-bash">sudo systemctl restart smbd
+</code></pre>
+<p><img alt="alter text" src="../fotos/sprint3/samba/comp5.png" /></p>
+<hr />
+<h2 id="gesto-dusuaris-i-permisos">Gestó d'usuaris i permisos</h2>
+<h3 id="creacio-dusuaris-i-grups">Creació d'usuaris i grups</h3>
+<p>Per gestionar l'accés, cal crear els usuaris i assignar-los als grups corresponents.</p>
+<p>Després de crear-los, verifiquem la seva assignació:</p>
+<pre><code class="language-bash">groups nom_usuari
+</code></pre>
+<p><img alt="alter text" src="../fotos/sprint3/samba/comp6.png" /></p>
+<h3 id="assignacio-de-contrasenya-per-a-samba">Assignació de contrasenya per a Samba</h3>
+<p>Perquè els usuaris puguin autenticar-se, cal establir una contrasenya específica per a Samba:</p>
+<pre><code class="language-bash">smbpasswd -a nom_usuari
+</code></pre>
+<p>Aquesta contrasenya és independent de la contrasenya del sistema.</p>
+<p><img alt="alter text" src="../fotos/sprint3/samba/comp7.png" /></p>
+<hr />
+<h2 id="configuracio-del-client-samba">Configuració del client Samba</h2>
+<h3 id="installacio-del-client">Instal·lació del client</h3>
+<p>Per accedir als recursos compartits, cal instal·lar el client Samba:</p>
+<pre><code class="language-bash">sudo apt install smbclient
+</code></pre>
+<p><img alt="alter text" src="../fotos/sprint3/samba/comp8.png" /></p>
+<p>Un cop instal·lat, podem accedir al recurs compartit des del cercador de fitxers, indicant la IP del servidor Samba i el nom del recurs, per exemple:</p>
+<pre><code class="language-bash">smb://10.0.2.15/asixa/
+</code></pre>
+<h3 id="connexio-com-a-usuari-anonim">Connexió com a usuari anònim</h3>
+<p>Si la configuració ho permet, es pot accedir com a usuari anònim. En aquest cas, només es poden veure els fitxers, però no modificar-los ni crear-ne de nous.</p>
+<p><img alt="alter text" src="../fotos/sprint3/samba/us1.png" /></p>
+<p><img alt="alter text" src="../fotos/sprint3/samba/us2.png" /></p>
+<p><img alt="alter text" src="../fotos/sprint3/samba/us3.png" /></p>
+<p>Si intentem crear o llegir certs fitxers sense els permisos necessaris, es generarà un error.</p>
+<h3 id="connexio-amb-usuaris-amb-permisos">Connexió amb usuaris amb permisos</h3>
+<h4 id="usuari-jesus">Usuari Jesus</h4>
+<p>L'usuari <code>jesus</code> pot llegir i escriure fitxers segons la configuració aplicada en <code>smb.conf</code>.</p>
+<p><img alt="alter text" src="../fotos/sprint3/samba/us4.png" /></p>
+<p><img alt="alter text" src="../fotos/sprint3/samba/us5.png" /></p>
+<h4 id="usuari-diego">Usuari Diego</h4>
+<p>L'usuari <code>diego</code> té accés de lectura però no pot modificar ni crear nous fitxers.</p>
+<p><img alt="alter text" src="../fotos/sprint3/samba/us6.png" /></p>
+<p><img alt="alter text" src="../fotos/sprint3/samba/us7.png" /></p>
+<p><img alt="alter text" src="../fotos/sprint3/samba/us8.png" /></p>
+<h4 id="usuari-joan">Usuari Joan</h4>
+<p>L'usuari <code>joan</code> no té permisos per accedir al recurs compartit.</p>
+<p><img alt="alter text" src="../fotos/sprint3/samba/us9.png" /></p>
+<p>ens tornara cap a fora</p>
+<p><img alt="alter text" src="../fotos/sprint3/samba/us10.png" /></p>
+<hr />
+<h2 id="integracio-amb-ldap_1">Integració amb LDAP</h2>
+<p>La integració de Samba amb LDAP pot resultar complexa, ja que requereix la configuració de <code>samba.schema</code> i diversos paràmetres addicionals. Una alternativa més senzilla és utilitzar Samba AD (Active Directory), que proporciona eines estandarditzades per a la gestió d'usuaris i permisos.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+            <div class="md-footer-image">
+                <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="noopener" title="Creative Commons">
+                    <img src="../../fotos/CC.png" alt="Footer Image" style="max-width: 80px; height: auto;">
+                </a>
+            </div>
+            <div class="md-copyright">
+                <div class="md-copyright__highlight">
+                    mkdocs-sistemes © 2024 by Jordi Cervera is licensed under CC BY 4.0
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "header.autohide", "announce.dismiss", "code.copy", "toc.integrate", "instant.click", "navigation.tabs"], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1440 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../raids/">
+      
+      
+        <link rel="next" href="../servidors_dactualitzacions/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>Registre i Monitoratge de Sistemes - Implantació de sistemes operatius</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f615399.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.649f08f9.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="light-blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#registre-i-monitoratge-de-sistemes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Implantació de sistemes operatius" class="md-header__button md-logo" aria-label="Implantació de sistemes operatius" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Implantació de sistemes operatius
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Registre i Monitoratge de Sistemes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Índex
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ubuntu/" class="md-tabs__link">
+          
+  
+  Projecte1
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../windows/" class="md-tabs__link">
+          
+  
+  Projecte2
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Implantació de sistemes operatius" class="md-nav__button md-logo" aria-label="Implantació de sistemes operatius" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Implantació de sistemes operatius
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Índex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projecte1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Projecte1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ubuntu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu 24.04 instal·lació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../natprofile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Perfil NAT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../llicenciament/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicencies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configxarxa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuració De Xarxa (Netplan)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ubuntu2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu Recuperacio del Grub2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../timeshift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació TimeShift
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guia_gestio_paquets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guia de Gestió de Paquets i Repositoris
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opening_packet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Afegir repositoris manualment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gestio_procesos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestio Processos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gestio_usuaris_grups_permisos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestio d'Usuaris,Grups i Permisos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemes_fitxers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sistemes de fitxers i particions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creació, formateig, muntatge i compartició de particions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../copies_seguretat_automatitzaci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipus de còpies de seguretat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automatitzacio_cron_anacron/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automatització de tasques amb cron i anacron
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../init_domini_ldap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació i preparació d'un domini ldap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unió de Clients al Domini LDAP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gestio_domini_ldap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestió de Directori LDAP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../perfils_mobils_compartir_recursos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Comparació entre Samba i NFS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../samba/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Samba
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ldap_entorngrafic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eines Gràfiques per Gestionar LDAP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint4
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../raids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raids
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint5
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Registre i Monitoratge de Sistemes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Registre i Monitoratge de Sistemes
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#importancia-dels-logs" class="md-nav__link">
+    Importància dels Logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubicacio-i-gestio-dels-logs" class="md-nav__link">
+    Ubicació i Gestió dels Logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracio-de-la-rotacio-de-logs" class="md-nav__link">
+    Configuració de la Rotació de Logs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../servidors_dactualitzacions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Servidor d'Actualitzacions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../auditoria_segu_linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auditoria de Seguretat en Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projecte2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Projecte2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalació de les maquines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="registre-i-monitoratge-de-sistemes">Registre i Monitoratge de Sistemes</h1>
+<h2 id="importancia-dels-logs">Importància dels Logs</h2>
+<p>Els logs són registres essencials que documenten totes les activitats i esdeveniments que es produeixen en un sistema informàtic. Aquests arxius permeten:</p>
+<ul>
+<li>Diagnosticar problemes i identificar errors en el sistema.</li>
+<li>Controlar el rendiment i l'activitat dels serveis.</li>
+<li>Auditar accions per detectar accessos sospitosos o anomalies de seguretat.</li>
+<li>Facilitar el desenvolupament i la depuració d'aplicacions.</li>
+</ul>
+<h2 id="ubicacio-i-gestio-dels-logs">Ubicació i Gestió dels Logs</h2>
+<p>En sistemes Linux, la majoria dels logs es troben al directori <strong>/var/log</strong>, on cada servei o aplicació genera els seus propis fitxers de registre. Aquests registres són fonamentals per al monitoratge del sistema, la detecció d'errors, l'auditoria d'esdeveniments i la identificació d'amenaces de seguretat.</p>
+<p>Per evitar que aquests arxius ocupin massa espai, s'aplica una política de <strong>rotació dels logs</strong>, que permet gestionar-los de manera eficient i conservar un històric sense saturar el sistema.</p>
+<h2 id="configuracio-de-la-rotacio-de-logs">Configuració de la Rotació de Logs</h2>
+<p>La rotació dels logs es pot programar modificant el fitxer de configuració global:</p>
+<p><img alt="alt text" src="../fotos/sprint5/m1.png" /></p>
+<p><img alt="alt text" src="../fotos/sprint5/m2.png" /></p>
+<pre><code class="language-bash">nano /etc/logrotate.conf
+</code></pre>
+<p>Si es vol establir una configuració específica per a un servei determinat, es poden definir regles personalitzades accedint al directori:</p>
+<p><img alt="alt text" src="../fotos/sprint5/m3.png" /></p>
+<pre><code class="language-bash">cd /etc/logrotate.d/
+</code></pre>
+<p>Per exemple, el servei <strong>Apache2</strong> té configurada una rotació automàtica dels seus logs cada <strong>14 dies</strong> per evitar que creixin de manera excessiva.</p>
+<p><img alt="alt text" src="../fotos/sprint5/m4.png" /></p>
+<p><img alt="alt text" src="../fotos/sprint5/m5.png" /></p>
+<p>D'aquesta manera, la gestió dels logs es manté ordenada i eficient, garantint un bon funcionament del sistema.</p>
+<h1 id="analitzacio-de-logs">Analització de Logs</h1>
+<h2 id="eines-per-a-lanalisi-de-logs">Eines per a l'Anàlisi de Logs</h2>
+<p>Els logs es poden analitzar mitjançant eines bàsiques com <code>cat</code> seguit de la ruta del log, però una eina molt més potent és <strong>journalctl</strong>. Aquesta eina permet consultar els esdeveniments del sistema amb filtres específics, com ara el rang de dates, utilitzant els paràmetres <code>--since</code> i <code>--until</code>. Així, es poden visualitzar només els esdeveniments d'un període determinat. Per exemple:</p>
+<pre><code class="language-bash">journalctl --since &quot;09:00&quot; --until &quot;10:00&quot;
+</code></pre>
+<p><img alt="alt text" src="../fotos/sprint5/m6.png" /></p>
+<h2 id="filtrat-per-dispositius">Filtrat per Dispositius</h2>
+<p>Per veure els registres associats a un dispositiu específic, com un disc, es pot executar:</p>
+<pre><code class="language-bash">journalctl /dev/sda
+</code></pre>
+<p><img alt="alt text" src="../fotos/sprint5/m7.png" /></p>
+<h1 id="logs-personalitzats">Logs Personalitzats</h1>
+<h2 id="logs-personalitzats-configuracio-i-personalitzacio">Logs Personalitzats: Configuració i Personalització</h2>
+<p>Amb <strong>logs personalitzats</strong>, podem modificar el comportament i les alertes dels registres del sistema segons les nostres necessitats. Això inclou:</p>
+<ul>
+<li>Canviar la configuració per defecte.</li>
+<li>Definir com es gestionen els diferents tipus de logs.</li>
+<li>Enviar els logs a un servidor centralitzat amb eines com <strong>Samba</strong> o <strong>SCP</strong>.</li>
+<li>Integrar-los amb <strong>Grafana</strong> per a una visualització i anàlisi centralitzada.</li>
+</ul>
+<h2 id="edicio-de-la-configuracio">Edició de la Configuració</h2>
+<p>Per modificar la configuració dels logs, es pot editar el fitxer de configuració de <strong>rsyslog</strong>:</p>
+<pre><code class="language-bash">nano /etc/rsyslog.d/50-default.conf
+</code></pre>
+<p><img alt="alt text" src="../fotos/sprint5/m8.png" /></p>
+<p>Això permet canviar la destinació dels logs, aplicar filtres o configurar alertes personalitzades.</p>
+<h2 id="simulacio-derrors-i-analisi">Simulació d'Errors i Anàlisi</h2>
+<p>Per simular un error en el servei de correu i verificar on es registra el log, es pot utilitzar la comanda:</p>
+<pre><code class="language-bash">logger -i -s -p mail.err &quot;prova error&quot;
+</code></pre>
+<p><img alt="alt text" src="../fotos/sprint5/m10.png" /></p>
+<p>Aquesta comanda genera un missatge amb la prioritat <strong>mail.err</strong>, que es registrarà automàticament en el fitxer de logs corresponent.</p>
+<h3 id="assignacio-de-logs-segons-prioritat">Assignació de Logs segons Prioritat</h3>
+<p>Els missatges de log es registren segons la seva prioritat i configuració:</p>
+<ul>
+<li>Un missatge amb <strong>mail.err</strong> es registrarà en un log específic per a errors de correu.</li>
+<li>Si es canvia la prioritat a <strong>mail.alert</strong>, el missatge es registrarà a <strong>mail.log</strong> en lloc de <strong>mail.err</strong>.</li>
+</ul>
+<p>Exemple d'alert:</p>
+<p><img alt="alt text" src="../fotos/sprint5/m9.png" /></p>
+<p>Aquesta gestió permet redirigir els logs segons el nivell d'alerta i les necessitats del sistema.</p>
+<hr />
+<h1 id="sistema-de-monitoratge-de-logs-amb-grafana-loki-i-promtail">Sistema de Monitoratge de Logs amb Grafana, Loki i Promtail</h1>
+<p>Aquest document descriu la implementació d'un sistema de monitoratge centralitzat de logs utilitzant Grafana, Loki i Promtail.</p>
+<h2 id="components-principals">Components Principals</h2>
+<ul>
+<li><strong>Grafana</strong>: Eina de visualització que permet crear dashboards interactius per analitzar les dades. (al final nomes hem relalitzat el aquesta eina)</li>
+<li><strong>Loki</strong>: Sistema d'agregació de logs, dissenyat per emmagatzemar i indexar els logs de manera eficient.</li>
+<li><strong>Promtail</strong>: Agent que s'executa als clients per recollir els logs (per exemple, des de <code>/var/log</code>) i enviar-los a Loki.</li>
+</ul>
+<h2 id="installacio-de-grafana">Instal·lació de Grafana</h2>
+<h3 id="afegir-el-repositori-i-la-clau-gpg">Afegir el repositori i la clau GPG</h3>
+<p>Per instal·lar Grafana en un servidor Linux (Debian/Ubuntu), cal afegir el repositori oficial i la seva clau GPG:</p>
+<pre><code class="language-bash">sudo apt update
+sudo apt install -y software-properties-common
+sudo add-apt-repository &quot;deb https://packages.grafana.com/oss/deb stable main&quot;
+wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+</code></pre>
+<p><img alt="alt text" src="../fotos/sprint5/gf1.png" /></p>
+<p><img alt="alt text" src="../fotos/sprint5/gf2.png" /></p>
+<p><img alt="alt text" src="../fotos/sprint5/gf3.png" /></p>
+<h3 id="installar-grafana">Instal·lar Grafana</h3>
+<pre><code class="language-bash">sudo apt update
+sudo apt install -y grafana
+</code></pre>
+<p><img alt="alt text" src="../fotos/sprint5/gf4.png" /></p>
+<p><img alt="alt text" src="../fotos/sprint5/gf5.png" /></p>
+<h3 id="habilitar-i-iniciar-el-servei-de-grafana">Habilitar i iniciar el servei de Grafana</h3>
+<pre><code class="language-bash">sudo systemctl enable grafana-server
+sudo systemctl start grafana-server
+</code></pre>
+<p><img alt="alt text" src="../fotos/sprint5/gf6.png" /></p>
+<h3 id="accedir-a-la-interficie-web-de-grafana">Accedir a la interfície web de Grafana</h3>
+<p>Grafana s'executa per defecte al port <strong>3000</strong>, així que es pot accedir des del navegador:</p>
+<pre><code class="language-bash">http://&lt;IP-del-servidor&gt;:3000
+</code></pre>
+<p><img alt="alt text" src="../fotos/sprint5/gf7.png" /></p>
+<p>Usuari i contrasenya per defecte:</p>
+<ul>
+<li><strong>Usuari</strong>: <code>admin</code></li>
+<li><strong>Contrasenya</strong>: <code>admin</code> (se sol·licitarà el canvi en el primer inici de sessió)</li>
+</ul>
+<h1 id="configuracio-de-rsyslog-en-linux-altre-metode">Configuració de Rsyslog en Linux (altre metode)</h1>
+<p>Al final hem tingut diferents problemes per a implementar loki amb grafana llavors hem buscat una alternativa mes "local". Llavors explicarem com configurar <strong>rsyslog</strong> en un entorn amb un equip <strong>receptor</strong> (servidor) i un <strong>emissor</strong> (client) per enviar i rebre logs de manera remota.</p>
+<h2 id="configuracio-del-receptor-servidor">Configuració del Receptor (Servidor)</h2>
+<h3 id="installacio-de-rsyslog">Instal·lació de Rsyslog</h3>
+<p>Actualitza el sistema i instal·la <strong>rsyslog</strong>:</p>
+<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt install rsyslog -y
+</code></pre>
+<p><img alt="alt text" src="../fotos/sprint5/rsys.png" /></p>
+<h3 id="editar-el-fitxer-de-configuracio">Editar el fitxer de configuració</h3>
+<p>Modifica el fitxer <strong>/etc/rsyslog.conf</strong> per habilitar la recepció de logs per UDP i TCP.</p>
+<pre><code class="language-bash">sudo nano /etc/rsyslog.conf
+</code></pre>
+<p>Descomenta les següents línies:</p>
+<pre><code class="language-bash"># provides UDP syslog reception
+module(load=&quot;imudp&quot;)
+input(type=&quot;imudp&quot; port=&quot;514&quot;)
+
+# provides TCP syslog reception
+module(load=&quot;imtcp&quot;)
+input(type=&quot;imtcp&quot; port=&quot;514&quot;)
+</code></pre>
+<p><img alt="alt text" src="../fotos/sprint5/rsys1.png" /></p>
+<p><img alt="alt text" src="../fotos/sprint5/rsys2.png" /></p>
+<h3 id="reiniciar-el-servei">Reiniciar el servei</h3>
+<p>Desa els canvis i reinicia el servei:</p>
+<pre><code class="language-bash">sudo systemctl restart rsyslog
+</code></pre>
+<h3 id="obrir-ports-al-firewall">Obrir ports al firewall</h3>
+<p>Permet el tràfic als ports necessaris:</p>
+<pre><code class="language-bash">sudo ufw allow 514/udp
+sudo ufw allow 514/tcp
+</code></pre>
+<p><img alt="alt text" src="../fotos/sprint5/rsys3.png" /></p>
+<h3 id="verificar-el-servei">Verificar el servei</h3>
+<p>Comprova que el servei està actiu:</p>
+<pre><code class="language-bash">sudo systemctl status rsyslog
+</code></pre>
+<h2 id="configuracio-de-lemissor-client">Configuració de l'Emissor (Client)</h2>
+<h3 id="installacio-de-rsyslog-a-lemissor">Instal·lació de Rsyslog a l'emissor</h3>
+<p>Actualitza el sistema i instal·la <strong>rsyslog</strong>:</p>
+<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt install rsyslog -y
+</code></pre>
+<h3 id="editar-el-fitxer-de-configuracio-de-lemissor">Editar el fitxer de configuració de l'emissor</h3>
+<p>Modifica el fitxer <strong>/etc/rsyslog.conf</strong> per especificar el servidor receptor:</p>
+<pre><code class="language-bash">sudo nano /etc/rsyslog.conf
+</code></pre>
+<p>Afegeix les línies següents al final del fitxer:</p>
+<pre><code class="language-bash">*.* @10.0.2.5:514    # Per UDP
+*.* @@10.0.2.5:514   # Per TCP
+</code></pre>
+<p><img alt="alt text" src="../fotos/sprint5/rsys4.png" /></p>
+<p>(Canvia <strong>10.0.2.15</strong> per l'adreça IP del receptor.)</p>
+<h3 id="reiniciar-el-servei-de-lemissor">Reiniciar el servei de l'emissor</h3>
+<p>Desa els canvis i reinicia el servei:</p>
+<pre><code class="language-bash">sudo systemctl restart rsyslog
+</code></pre>
+<h2 id="comprovar-el-funcionament">Comprovar el Funcionament</h2>
+<h3 id="verificar-el-receptor">**Verificar el Receptor</h3>
+<p>Comprova els logs en temps real:</p>
+<pre><code class="language-bash">sudo tail -f /var/log/syslog
+</code></pre>
+<h3 id="enviar-un-missatge-de-prova-des-de-lemissor">Enviar un missatge de prova des de l'Emissor</h3>
+<p>Envia un log de prova amb la comanda <strong>logger</strong>:</p>
+<pre><code class="language-bash">logger &quot;Prova de log des de l'emissor&quot;
+</code></pre>
+<p><img alt="alt text" src="../fotos/sprint5/rsys5.png" /></p>
+<h3 id="verificar-que-el-missatge-sha-rebut">Verificar que el missatge s'ha rebut</h3>
+<p>Revisa si el missatge ha arribat al receptor:</p>
+<p><img alt="alt text" src="../fotos/sprint5/rsys6.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+            <div class="md-footer-image">
+                <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="noopener" title="Creative Commons">
+                    <img src="../../fotos/CC.png" alt="Footer Image" style="max-width: 80px; height: auto;">
+                </a>
+            </div>
+            <div class="md-copyright">
+                <div class="md-copyright__highlight">
+                    mkdocs-sistemes © 2024 by Jordi Cervera is licensed under CC BY 4.0
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "header.autohide", "announce.dismiss", "code.copy", "toc.integrate", "instant.click", "navigation.tabs"], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>
