@@ -1,0 +1,1499 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../llicenciament_windows/">
+      
+      
+        <link rel="next" href="../copies_seguretat_automatitzaci%C3%B3_windows/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>Particions i Gestió de Disc Windows - Implantació de sistemes operatius</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f615399.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.649f08f9.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="light-blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#particions-i-gestio-de-disc-windows" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Implantació de sistemes operatius" class="md-header__button md-logo" aria-label="Implantació de sistemes operatius" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Implantació de sistemes operatius
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Particions i Gestió de Disc Windows
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Índex
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ubuntu/" class="md-tabs__link">
+          
+  
+  Projecte1
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../windows/" class="md-tabs__link">
+          
+  
+  Projecte2
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Implantació de sistemes operatius" class="md-nav__button md-logo" aria-label="Implantació de sistemes operatius" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Implantació de sistemes operatius
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Índex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projecte1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Projecte1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ubuntu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu 24.04 instal·lació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../natprofile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Perfil NAT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../llicenciament/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicencies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configxarxa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuració De Xarxa (Netplan)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ubuntu2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu Recuperacio del Grub2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../timeshift/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació TimeShift
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guia_gestio_paquets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guia de Gestió de Paquets i Repositoris
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opening_packet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Afegir repositoris manualment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gestio_procesos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestio Processos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gestio_usuaris_grups_permisos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestio d'Usuaris,Grups i Permisos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sistemes_fitxers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sistemes de fitxers i particions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creació, formateig, muntatge i compartició de particions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../copies_seguretat_automatitzaci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipus de còpies de seguretat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automatitzacio_cron_anacron/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automatització de tasques amb cron i anacron
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../init_domini_ldap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instal·lació i preparació d'un domini ldap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unió de Clients al Domini LDAP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gestio_domini_ldap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestió de Directori LDAP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../perfils_mobils_compartir_recursos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Comparació entre Samba i NFS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../samba/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Samba
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ldap_entorngrafic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eines Gràfiques per Gestionar LDAP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint4
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../raids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raids
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint5
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitoratge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Registre i Monitoratge de Sistemes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../servidors_dactualitzacions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Servidor d'Actualitzacions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../auditoria_segu_linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auditoria de Seguretat en Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projecte2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Projecte2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalació de les maquines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../llicenciament_windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Llicenciament
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Particions i Gestió de Disc Windows
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Particions i Gestió de Disc Windows
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#afegir-un-disc-nou-en-windows" class="md-nav__link">
+    Afegir un Disc Nou en Windows
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprovacio-amb-diskpart" class="md-nav__link">
+    Comprovació amb DiskPart
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../copies_seguretat_automatitzaci%C3%B3_windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Còpies de seguretat i automatització a Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gestio_procesos_windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestió de processos i serveis al Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gestio_permisos_windows%28ACLs%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestió d'ACLs (llistes de control d'accés) a Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="particions-i-gestio-de-disc-windows">Particions i Gestió de Disc Windows</h1>
+<h2 id="afegir-un-disc-nou-en-windows">Afegir un Disc Nou en Windows</h2>
+<p>Quan afegim un disc nou a un sistema Windows, potser no apareixerà automàticament. Això és habitual, ja que cal inicialitzar-lo, crear una partició i assignar-li un volum perquè sigui utilitzable. A continuació, veurem com fer-ho pas a pas.</p>
+<p><strong>Connecta el disc nou</strong> a l'ordinador.</p>
+<p><img alt="alt text" src="../fotos/windows/g1.png" /></p>
+<p><strong>Accedeix a la gestió de discs</strong>. Escriu <code>disc</code> al cercador de Windows i selecciona l'opció <strong>Create and format hard disk partitions</strong>.</p>
+<p><img alt="alt text" src="../fotos/windows/g2.png" /></p>
+<p>El disc nou hauria d'aparèixer com a <em>No assignat</em>. Fes clic dret sobre aquest espai i selecciona <strong>New Simple Volume</strong>.</p>
+<p><img alt="alt text" src="../fotos/windows/g3.png" /></p>
+<p>Selecciona la mida de la nova partició. Pots utilitzar tot l'espai disponible o dividir-lo en diverses particions.</p>
+<p><img alt="alt text" src="../fotos/windows/g4.png" /></p>
+<p>Pots assignar una lletra de unitat o munta el disc dins d’un directori NTFS existent.</p>
+<p><img alt="alt text" src="../fotos/windows/g5.png" /></p>
+<p>Tria el sistema de fitxers. Per a aquesta pràctica, seleccionem <strong>FAT32</strong>. També pots definir una etiqueta de volum i la mida de la unitat d'assignació.</p>
+<p><img alt="alt text" src="../fotos/windows/g6.png" /></p>
+<p>Finalitza la configuració. El disc ja està llest per utilitzar. Opcionalment, pots crear dues particions: una en <strong>FAT32</strong> i una altra en <strong>NTFS</strong>.</p>
+<p><img alt="alt text" src="../fotos/windows/g7.png" /></p>
+<h2 id="comprovacio-amb-diskpart">Comprovació amb DiskPart</h2>
+<p>Utilitza la línia d'ordres amb l’eina <code>diskpart</code> per veure informació sobre discos, particions, estat i sistema de fitxers:</p>
+<pre><code class="language-bash">diskpart
+list disk
+list volume
+</code></pre>
+<p><img alt="alt text" src="../fotos/windows/g8.png" /></p>
+<h1 id="gestio-de-quotes-de-disc-i-usuaris-a-windows">Gestió de quotes de disc i usuaris a Windows</h1>
+<h2 id="quotes-de-disc">Quotes de disc</h2>
+<p>Les quotes de disc serveixen per limitar l’espai d’emmagatzematge que pot fer servir cada usuari dins d’un disc concret. Aquesta funcionalitat és especialment útil en entorns compartits, com pot ser una escola o una empresa, per evitar que un sol usuari ocupi tot l’espai disponible del sistema.</p>
+<h3 id="activacio-de-les-quotes-des-de-les-politiques-de-windows">Activació de les quotes des de les polítiques de Windows</h3>
+<p>El primer pas consisteix a activar les quotes a través de les polítiques de sistema. Per fer-ho, es pot utilitzar l’Editor de polítiques locals o altres eines d’administració avançada.</p>
+<blockquote>
+<p><strong>Nota:</strong> Es necessita permisos d’administrador per aplicar aquests canvis.</p>
+</blockquote>
+<p><img alt="alt text" src="../fotos/windows/g9.png" /></p>
+<h3 id="aplicar-quotes-en-un-disc-concret">Aplicar quotes en un disc concret</h3>
+<ol>
+<li>Obre l’Explorador de fitxers i localitza el disc sobre el qual vols aplicar les quotes.</li>
+<li><strong>Important:</strong> Assegura’t que el disc utilitza el sistema de fitxers <strong>NTFS</strong>, ja que les quotes no són compatibles amb FAT32.</li>
+<li>Fes clic dret al disc i selecciona <strong>Propietats</strong>.</li>
+<li>A la finestra que apareix, obre la pestanya <strong>Quota</strong>.</li>
+<li>Clica a <strong>Mostra la configuració de quotes</strong> per accedir a les opcions detallades.</li>
+</ol>
+<h3 id="configuracio-de-la-quota">Configuració de la quota</h3>
+<p>Un cop dins la configuració, es poden definir:</p>
+<ul>
+<li>L’activació del control de quotes.</li>
+<li>El límit màxim d’espai per usuari.</li>
+<li>Si es mostraran avisos o si es bloquejarà l’escriptura quan es superi el límit.</li>
+</ul>
+<p>Els límits es poden establir en KB, MB o GB. En el nostre cas, s’ha triat MB per aplicar una quota moderada i adequada a un entorn de pràctiques.</p>
+<p><img alt="alt text" src="../fotos/windows/g10.png" /></p>
+<p>Quan això estigui aplicat, cada usuari només podrà fer servir l’espai que se li ha assignat.</p>
+<hr />
+<h2 id="gestio-dusuaris-a-windows">Gestió d’usuaris a Windows</h2>
+<p>Windows ofereix diferents maneres de gestionar els comptes d’usuari locals. Una de les més còmodes és a través de l’eina <strong>netplwiz</strong>.</p>
+<h3 id="acces-a-leina-netplwiz">Accés a l’eina <code>netplwiz</code></h3>
+<ol>
+<li>Escriu <code>netplwiz</code> al cercador del menú Inici.</li>
+<li>També es pot obrir des del "Panell de control avançat de comptes d’usuari".</li>
+</ol>
+<p><img alt="alt text" src="../fotos/windows/g11.png" /></p>
+<p>Aquesta eina permet veure i gestionar els usuaris del sistema de forma senzilla.</p>
+<h3 id="creacio-i-gestio-avancada-dusuaris">Creació i gestió avançada d’usuaris</h3>
+<ol>
+<li>A la finestra principal, veuràs la llista d’usuaris. Clica <strong>Afegeix</strong> per crear un nou compte.</li>
+<li>Per opcions més avançades, fes clic al botó <strong>Advanced</strong>. Això obrirà la consola <strong>Usuaris i grups locals (Local Users and Groups)</strong>.</li>
+</ol>
+<p><img alt="alt text" src="../fotos/windows/g12.png" /></p>
+<h4 id="crear-un-nou-usuari">Crear un nou usuari</h4>
+<ol>
+<li>A la secció <strong>Users</strong>, fes clic dret i selecciona <strong>Nou usuari</strong>.</li>
+<li>Introdueix:</li>
+<li>Nom d’usuari.</li>
+<li>Contrasenya (opcional).</li>
+<li>Descripció (si es vol).</li>
+<li>I configura si cal canviar la contrasenya en el següent inici de sessió o si es vol deshabilitar el compte.</li>
+</ol>
+<p><img alt="alt text" src="../fotos/windows/g13.png" /></p>
+<p>Per fer pràctiques, s’han creat usuaris com <strong>Alumne1</strong> i <strong>Alumne2</strong>.</p>
+<hr />
+<h3 id="creacio-dun-grup-nou">Creació d’un grup nou</h3>
+<p>Per agrupar aquests usuaris en un mateix conjunt i poder aplicar permisos compartits:</p>
+<ol>
+<li>A la secció <strong>Groups</strong>, fes clic dret i selecciona <strong>New Group</strong>.</li>
+<li>Dona-li un nom (per exemple, <code>Pràctiques</code>).</li>
+<li>Afegeix els usuaris clicant a <strong>Add</strong> i escrivint els seus noms.</li>
+</ol>
+<p><img alt="alt text" src="../fotos/windows/g14.png" /></p>
+<p>Aquesta agrupació facilita la gestió de permisos per a carpetes, aplicacions o recursos compartits.</p>
+<h3 id="verificacio-dels-grups-dun-usuari">Verificació dels grups d’un usuari</h3>
+<p>Pots comprovar a quin grup pertany un usuari:</p>
+<ol>
+<li>Fes clic dret sobre l’usuari.</li>
+<li>Selecciona <strong>Propietats</strong>.</li>
+<li>Ves a la pestanya <strong>Member Of</strong>, on es mostrarà si pertany a grups com <code>Users</code>, <code>Administrators</code> o el grup <code>Pràctiques</code>.</li>
+</ol>
+<p><img alt="alt text" src="../fotos/windows/g15.png" /></p>
+<hr />
+<h3 id="proves-amb-els-nous-usuaris">Proves amb els nous usuaris</h3>
+<p>Després de configurar-ho tot, es pot iniciar sessió amb un dels nous comptes (per exemple, <strong>Alumne1</strong>) per comprovar el funcionament del sistema.</p>
+<p>En una prova, en intentar copiar un fitxer gran, ha aparegut un missatge de <strong>“Above limit”</strong>, indicant que s’ha superat el límit de la quota establerta. Encara que es permet continuar, aquest avís es pot configurar perquè bloquegi completament l’escriptura si se superen, per exemple, els 300 MB. Això es gestiona des de la configuració de quotes del sistema de fitxers NTFS.</p>
+<p><img alt="alt text" src="../fotos/windows/g16.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+            <div class="md-footer-image">
+                <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="noopener" title="Creative Commons">
+                    <img src="../../fotos/CC.png" alt="Footer Image" style="max-width: 80px; height: auto;">
+                </a>
+            </div>
+            <div class="md-copyright">
+                <div class="md-copyright__highlight">
+                    mkdocs-sistemes © 2024 by Jordi Cervera is licensed under CC BY 4.0
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "header.autohide", "announce.dismiss", "code.copy", "toc.integrate", "instant.click", "navigation.tabs"], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>
